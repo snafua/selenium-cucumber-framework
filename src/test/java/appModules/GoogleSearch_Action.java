@@ -2,6 +2,8 @@ package appModules;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,6 +20,9 @@ public class GoogleSearch_Action {
 
 		String googleUrl = "https://www.google.co.uk";
 		driver.get(googleUrl);
+		final ExpectedCondition<WebElement> webElementExpectedCondition = ExpectedConditions.elementToBeClickable(HomePage.searchField());
+		//wait.until();
+		//wait.until(webElementExpectedCondition);
 		wait.until(ExpectedConditions.elementToBeClickable(HomePage.searchField()));
 
 		HomePage.searchField().clear();
